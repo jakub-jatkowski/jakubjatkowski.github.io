@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
 </head>
 <body>
 
@@ -311,7 +311,10 @@
 
               <!-- Prawa kolumna: Formularz kontaktowy -->
               <div class="contact-form-col">
-                <form id="contactForm" class="minimal-form" novalidate>
+                <form id="contactForm" class="minimal-form" action="https://formsubmit.co/jakubjatkowski@gmail.com" method="POST" novalidate>
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_subject" value="Nowe zapytanie o projekt — Jakub Jatkowski">
+                  <input type="hidden" name="_template" value="table">
                   
                   <div class="form-row-2">
                     <div class="form-field">
@@ -401,6 +404,6 @@
   <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
   <!-- Script -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.1"></script>
 </body>
 </html>

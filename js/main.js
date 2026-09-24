@@ -263,7 +263,7 @@ function initEmailCopy() {
 }
 
 /* --------------------------------------------------------------------------
-   6. OBSŁUGA FORMULARZA KONTAKTOWEGO
+   6. OBSŁUGA FORMULARZA KONTAKTOWEGO (RZECZYWISTA WYSYŁKA NA jakubjatkowski@gmail.com)
    -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -271,55 +271,82 @@ function initContactForm() {
 
   if (!form || !submitBtn) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const nameInput = document.getElementById('formName');
     const emailInput = document.getElementById('formEmail');
+    const serviceInput = document.getElementById('formService');
     const messageInput = document.getElementById('formMessage');
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const service = serviceInput ? serviceInput.value : 'Ogólne zapytanie';
+    const message = messageInput ? messageInput.value.trim() : '';
 
     // Walidacja
     if (!name) {
       showToast('Wpisz swoje imię');
-      nameInput.focus();
+      if (nameInput) nameInput.focus();
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
       showToast('Wpisz poprawny adres e-mail');
-      emailInput.focus();
+      if (emailInput) emailInput.focus();
       return;
     }
 
     if (!message) {
-      showToast('Napisz krótką wiadomość');
-      messageInput.focus();
+      showToast('Napisz treść wiadomości');
+      if (messageInput) messageInput.focus();
       return;
     }
 
     // Stan wysyłania
     const originalBtnHtml = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Wysyłanie...</span>';
+    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Wysyłanie wiadomości...</span>';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Wysłano pomyślnie!</span>';
-      submitBtn.style.backgroundColor = '#10b981';
-      showToast('Dziękuję za wiadomość! Odpowiem najszybciej jak to możliwe.');
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/jakubjatkowski@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          'Imię': name,
+          'Email': email,
+          'Usługa': service,
+          'Wiadomość': message,
+          '_subject': `Nowe zapytanie od ${name} — Portfolio`
+        })
+      });
 
-      form.reset();
+      const data = await response.json();
 
+      if (response.ok || data.success === 'true' || data.success === true) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Wysłano pomyślnie!</span>';
+        submitBtn.style.backgroundColor = '#10b981';
+        showToast('Dziękuję za wiadomość! Odpowiem tak szybko, jak to możliwe.');
+        form.reset();
+      } else {
+        throw new Error('Błąd wysyłki');
+      }
+    } catch (err) {
+      // Fallback: standardowy submit
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Przekierowanie...</span>';
+      showToast('Wysyłanie przez serwer pocztowy...');
+      form.submit();
+    } finally {
       setTimeout(() => {
         submitBtn.innerHTML = originalBtnHtml;
         submitBtn.style.backgroundColor = '';
         submitBtn.disabled = false;
-      }, 4000);
-    }, 800);
+      }, 5000);
+    }
   });
 }
 
