@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jakub Jatkowski — Video Editor & Graphic Designer</title>
-  <meta name="description" content="Portfolio Jakuba Jatkowskiego. Dynamiczny montaż wideo (Rolki, TikTok, Shorts), grafika reklamowa i DTP.">
-  <meta name="keywords" content="Jakub Jatkowski, video editor, montaż wideo, rolki, tiktok, grafika komputerowa, dtp">
+  <meta name="description" content="Portfolio Jakuba Jatkowskiego. Dynamiczny montaż wideo (Rolki, TikTok, Shorts), materiały reklamowe, grafika do social mediów oraz precyzyjna poligrafia DTP.">
+  <meta name="keywords" content="Jakub Jatkowski, video editor, montaż wideo, rolki, tiktok, shorts, grafika komputerowa, dtp, poligrafia, davinci resolve, affinity">
   <meta name="author" content="Jakub Jatkowski">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Jakub Jatkowski — Video Editor & Graphic Designer">
-  <meta property="og:description" content="Dynamiczny montaż krótkich form wideo oraz projekty graficzne.">
+  <meta property="og:description" content="Dynamiczny montaż krótkich form wideo oraz profesjonalne projekty graficzne i DTP.">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -26,69 +26,90 @@
 </head>
 <body>
 
+  <!-- Subtelna studyjna poświata w tle -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       NAGŁÓWEK / NAWIGACJA
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Jakub Jatkowski — strona główna">
+        <span class="brand-badge">JJ</span>
+        <span class="brand-name">Jakub Jatkowski</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Nawigacja główna">
+        <a href="#projekty" class="nav-link">Wybrane projekty</a>
+        <a href="#warsztat" class="nav-link">Warsztat</a>
+        <a href="#kontakt" class="nav-link">Kontakt</a>
+      </nav>
+
+      <div class="header-right">
+        <button class="btn btn-secondary btn-sm copy-email-btn" data-email="jakubjatkowski@gmail.com" title="Skopiuj adres e-mail">
+          <i class="fa-regular fa-copy"></i>
+          <span>jakubjatkowski@gmail.com</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
   <main>
     <!-- =========================================================================
-         HERO SECTION (EDITORIAL & CLEAN)
+         HERO SECTION
          ========================================================================= -->
     <section id="hero" class="hero-section">
       <div class="container">
         <div class="hero-grid">
           
-          <div class="hero-content-wrap">
-            
+          <div class="hero-content">
             <div class="hero-status-pill">
               <span class="status-dot"></span>
-              <span>Dostępny do nowych zleceń</span>
+              <span>Dostępny do realizacji nowych zleceń</span>
             </div>
 
-            <div class="hero-author-tag">Jakub Jatkowski</div>
-
-            <h1 class="hero-headline" id="heroHeadline">
-              Tworzę <span class="typewriter-word" id="typeDynamic" data-phrases='["Rolki", "Wideo", "Grafikę", "Karuzele"]' title="Kliknij lub dotknij, aby zmienić napis">Rolki</span><span class="typewriter-cursor" id="cursorDynamic"></span>
+            <h1 class="hero-title">
+              <span class="hero-line">Tworzę <span class="typewriter-word" id="typeDynamic" data-phrases='["rolki i shortsy", "wideo reklamowe", "karuzele", "materiały DTP"]'>rolki i shortsy</span><span class="typewriter-cursor" id="cursorDynamic"></span></span>
+              <span class="hero-line">oraz precyzyjną grafikę.</span>
             </h1>
 
-            <p class="hero-subtext">
-              Tworzę krótkie formy na Rolki, TikTok i YouTube Shorts z dbałością o rytm i retencję, estetyczne materiały do social mediów oraz precyzyjne projekty do druku.
+            <p class="hero-description">
+              Tworzę angażujące krótkie formy wideo na <strong>Rolki, TikTok i YouTube Shorts</strong> zoptymalizowane pod kątem retencji uwagi, estetyczne materiały do mediów społecznościowych oraz bezbłędnie przygotowane pliki do druku (DTP, profil CMYK).
             </p>
 
             <div class="hero-actions">
               <a href="#projekty" class="btn btn-primary">
-                <span>Zobacz prace</span>
+                <span>Zobacz wybrane realizacje</span>
                 <i class="fa-solid fa-arrow-down"></i>
               </a>
-              <button class="btn btn-secondary copy-email-btn" data-email="kontakt@jakubjatkowski.pl">
-                <i class="fa-regular fa-copy"></i>
-                <span>kontakt@jakubjatkowski.pl</span>
-              </button>
+              <a href="#kontakt" class="btn btn-secondary">
+                <span>Skontaktuj się ze mną</span>
+                <i class="fa-solid fa-envelope"></i>
+              </a>
             </div>
-
           </div>
 
-          <div class="hero-visual-col">
-            <div class="hero-visual-stage">
-              <!-- Ambient background aura matching emerald green hoodie -->
-              <div class="hero-ambient-glow" aria-hidden="true"></div>
-              <div class="hero-ambient-ring" aria-hidden="true"></div>
-              
-              <!-- Bezpośrednia integracja zdjęcia bez zamykającej ramki -->
-              <div class="hero-figure-wrap">
-                <img src="assets/images/jakub.png" alt="Jakub Jatkowski — Video Editor & Graphic Designer" class="hero-cutout-img">
+          <div class="hero-visual">
+            <div class="hero-stage">
+              <div class="stage-aura" aria-hidden="true"></div>
+              <div class="hero-img-wrap">
+                <img src="assets/images/jakub.png" alt="Jakub Jatkowski — Video Editor & Graphic Designer" class="hero-portrait">
               </div>
-
-              <!-- Pływające mikro-odznaki zintegrowane z sylwetką -->
-              <div class="hero-float-chip chip-top-right">
-                <span class="chip-icon"><i class="fa-solid fa-bolt"></i></span>
-                <div class="chip-info">
-                  <span class="chip-label">Dynamiczny Montaż</span>
-                  <span class="chip-sub">Rolki, TikTok & Shorts</span>
+              
+              <!-- Wizualne odznaki kompetencji -->
+              <div class="hero-badge badge-top">
+                <i class="fa-solid fa-video"></i>
+                <div>
+                  <strong>Montaż wideo</strong>
+                  <small>DaVinci Resolve • CapCut</small>
                 </div>
               </div>
 
-              <div class="hero-float-chip chip-bottom-left">
-                <span class="chip-icon"><i class="fa-solid fa-layer-group"></i></span>
-                <div class="chip-info">
-                  <span class="chip-label">Grafika & DTP</span>
-                  <span class="chip-sub">Affinity • Social Media</span>
+              <div class="hero-badge badge-bottom">
+                <i class="fa-solid fa-pen-nib"></i>
+                <div>
+                  <strong>Grafika & Poligrafia</strong>
+                  <small>Affinity • Druk CMYK</small>
                 </div>
               </div>
             </div>
@@ -99,137 +120,140 @@
     </section>
 
     <!-- =========================================================================
-         PORTFOLIO (WYBRANE PRACE)
+         PORTFOLIO / WYBRANE PROJEKTY
          ========================================================================= -->
-    <section id="projekty" class="works-section">
+    <section id="projekty" class="portfolio-section">
       <div class="container">
         
-        <div class="section-top">
+        <div class="section-header">
           <div>
             <span class="section-tag">Portfolio</span>
-            <h2 class="section-title">Wybrane projekty</h2>
+            <h2 class="section-title">Wybrane realizacje</h2>
+            <p class="section-subtitle">Kliknij dowolną kartę, aby sprawdzić szczegóły techniczne, formaty oraz zakres prac.</p>
           </div>
+
           <!-- Filtry kategorii -->
           <div class="filter-tabs">
             <button class="tab-btn active" data-filter="all">Wszystkie</button>
-            <button class="tab-btn" data-filter="video">Wideo</button>
-            <button class="tab-btn" data-filter="graphic">Grafika & Druk</button>
+            <button class="tab-btn" data-filter="video">Montaż wideo</button>
+            <button class="tab-btn" data-filter="graphic">Social Media</button>
+            <button class="tab-btn" data-filter="print">Druk & DTP</button>
+            <button class="tab-btn" data-filter="branding">Identyfikacja</button>
           </div>
         </div>
 
-        <div class="works-grid">
+        <div class="projects-grid">
 
-          <!-- Projekt 1: Wideo Reel -->
-          <article class="work-card" data-category="video" data-id="reel-1">
-            <div class="card-inner">
-              <div class="card-media">
-                <img src="assets/images/reel_preview.jpg" alt="Dynamiczny montaż krótkiej formy wideo" loading="lazy">
-                <div class="media-badge">Wideo • 9:16</div>
-                <div class="card-hover-overlay">
-                  <span class="overlay-action-pill"><i class="fa-solid fa-play"></i> Zobacz montaż</span>
-                </div>
+          <!-- Projekt 1: Rolka Edukacyjna -->
+          <article class="project-card" data-category="video" data-id="reel-1">
+            <div class="card-image-wrap">
+              <img src="assets/images/reel_preview.jpg" alt="Dynamiczny montaż rolki edukacyjnej" loading="lazy">
+              <span class="card-badge"><i class="fa-solid fa-video"></i> Wideo • 9:16</span>
+              <div class="card-overlay">
+                <span class="overlay-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Zobacz szczegóły</span>
               </div>
-              <div class="card-content">
-                <div class="card-meta">
-                  <h3 class="card-title">Dynamiczny montaż rolki edukacyjnej</h3>
-                  <p class="card-desc">Format pionowy, kinetyczne napisy, cięcia eliminujące pauzy i warstwowy sound design.</p>
-                </div>
-                <div class="card-footer">
-                  <span class="card-tag">DaVinci Resolve • CapCut</span>
-                  <span class="card-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Dynamiczny montaż rolki edukacyjnej</h3>
+              <p class="card-desc">Format pionowy (9:16), kinetyczne napisy o wysokim kontraście, cięcia eliminujące zbędne pauzy oraz dopasowany sound design.</p>
+              <div class="card-footer">
+                <span class="card-tools">DaVinci Resolve • CapCut</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-chevron-right"></i></span>
               </div>
             </div>
           </article>
 
           <!-- Projekt 2: Wideo Ads -->
-          <article class="work-card" data-category="video" data-id="reel-2">
-            <div class="card-inner">
-              <div class="card-media">
-                <img src="assets/images/ads_showcase.jpg" alt="Wideo produktowe i reklamowe" loading="lazy">
-                <div class="media-badge">Reklama • Ads</div>
-                <div class="card-hover-overlay">
-                  <span class="overlay-action-pill"><i class="fa-solid fa-play"></i> Zobacz montaż</span>
-                </div>
+          <article class="project-card" data-category="video" data-id="reel-2">
+            <div class="card-image-wrap">
+              <img src="assets/images/ads_showcase.jpg" alt="Wideo produktowe i reklamowe" loading="lazy">
+              <span class="card-badge"><i class="fa-solid fa-bullhorn"></i> Reklama • Ads</span>
+              <div class="card-overlay">
+                <span class="overlay-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Zobacz szczegóły</span>
               </div>
-              <div class="card-content">
-                <div class="card-meta">
-                  <h3 class="card-title">Wideo produktowe pod social media</h3>
-                  <p class="card-desc">Szybkie przejścia, animacje tekstowe i dynamiczna prezentacja cech produktu.</p>
-                </div>
-                <div class="card-footer">
-                  <span class="card-tag">CapCut • DaVinci</span>
-                  <span class="card-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Wideo produktowe pod social media & ads</h3>
+              <p class="card-desc">Krótki format promocyjny do kampanii reklamowych. Dynamiczne przejścia montażowe, animacje tekstowe i rytmiczny podkład muzyczny.</p>
+              <div class="card-footer">
+                <span class="card-tools">CapCut Pro • DaVinci</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-chevron-right"></i></span>
               </div>
             </div>
           </article>
 
           <!-- Projekt 3: Social Media Grid -->
-          <article class="work-card" data-category="graphic" data-id="social-1">
-            <div class="card-inner">
-              <div class="card-media">
-                <img src="assets/images/social_grid.jpg" alt="Identyfikacja wizualna profilu i karuzela" loading="lazy">
-                <div class="media-badge">Social Media</div>
-                <div class="card-hover-overlay">
-                  <span class="overlay-action-pill"><i class="fa-solid fa-eye"></i> Zobacz projekt</span>
-                </div>
+          <article class="project-card" data-category="graphic" data-id="social-1">
+            <div class="card-image-wrap">
+              <img src="assets/images/social_grid.jpg" alt="Identyfikacja wizualna profilu i karuzela" loading="lazy">
+              <span class="card-badge"><i class="fa-solid fa-shapes"></i> Social Media</span>
+              <div class="card-overlay">
+                <span class="overlay-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Zobacz szczegóły</span>
               </div>
-              <div class="card-content">
-                <div class="card-meta">
-                  <h3 class="card-title">Siatka postów na profil & karuzela</h3>
-                  <p class="card-desc">Spójna identyfikacja wizualna, infografiki oraz wieloslajdowe posty edukacyjne.</p>
-                </div>
-                <div class="card-footer">
-                  <span class="card-tag">Affinity • Canva</span>
-                  <span class="card-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Siatka postów na profil i karuzela edukacyjna</h3>
+              <p class="card-desc">Spójna oprawa graficzna profilu na Instagramie: przejrzysta siatka postów, ikony relacji wyróżnionych oraz wieloslajdowa karuzela.</p>
+              <div class="card-footer">
+                <span class="card-tools">Affinity Designer • Canva</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-chevron-right"></i></span>
               </div>
             </div>
           </article>
 
-          <!-- Projekt 4: Druk & Plakat -->
-          <article class="work-card" data-category="graphic" data-id="dtp-1">
-            <div class="card-inner">
-              <div class="card-media">
-                <img src="assets/images/dtp_print_mockup.jpg" alt="Materiały do druku" loading="lazy">
-                <div class="media-badge">Druk • Poligrafia</div>
-                <div class="card-hover-overlay">
-                  <span class="overlay-action-pill"><i class="fa-solid fa-eye"></i> Zobacz pliki</span>
-                </div>
+          <!-- Projekt 4: Druk DTP -->
+          <article class="project-card" data-category="print" data-id="dtp-1">
+            <div class="card-image-wrap">
+              <img src="assets/images/dtp_print_mockup.jpg" alt="Plakat promocyjny i materiały do druku" loading="lazy">
+              <span class="card-badge"><i class="fa-solid fa-print"></i> Druk • Poligrafia</span>
+              <div class="card-overlay">
+                <span class="overlay-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Zobacz szczegóły</span>
               </div>
-              <div class="card-content">
-                <div class="card-meta">
-                  <h3 class="card-title">Plakat promocyjny i materiały do druku</h3>
-                  <p class="card-desc">Przygotowanie plików do druku: plakat B1, rollup oraz ulotki (CMYK, spady 3mm).</p>
-                </div>
-                <div class="card-footer">
-                  <span class="card-tag">Affinity • Druk CMYK</span>
-                  <span class="card-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Plakat promocyjny i materiały poligraficzne</h3>
+              <p class="card-desc">Przygotowanie plików produkcyjnych: plakat B1, rollup oraz ulotki. Prawidłowy profil barw CMYK (FOGRA39), 3 mm spadu i wektoryzacja fontów.</p>
+              <div class="card-footer">
+                <span class="card-tools">Affinity Designer • Druk CMYK</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-chevron-right"></i></span>
               </div>
             </div>
           </article>
 
           <!-- Projekt 5: Branding & Logo -->
-          <article class="work-card" data-category="graphic" data-id="branding-1">
-            <div class="card-inner">
-              <div class="card-media">
-                <img src="assets/images/branding_showcase.jpg" alt="Identyfikacja wizualna i logo" loading="lazy">
-                <div class="media-badge">Branding</div>
-                <div class="card-hover-overlay">
-                  <span class="overlay-action-pill"><i class="fa-solid fa-eye"></i> Zobacz znak</span>
-                </div>
+          <article class="project-card" data-category="branding" data-id="branding-1">
+            <div class="card-image-wrap">
+              <img src="assets/images/branding_showcase.jpg" alt="Projekt logo i identyfikacja tożsamości marki" loading="lazy">
+              <span class="card-badge"><i class="fa-solid fa-pen-nib"></i> Branding</span>
+              <div class="card-overlay">
+                <span class="overlay-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Zobacz szczegóły</span>
               </div>
-              <div class="card-content">
-                <div class="card-meta">
-                  <h3 class="card-title">Projekt logo & tożsamość marki</h3>
-                  <p class="card-desc">Wektorowy znak graficzny, dobór typografii oraz paleta kolorów z wytycznymi.</p>
-                </div>
-                <div class="card-footer">
-                  <span class="card-tag">Affinity • Wektor</span>
-                  <span class="card-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Projekt logo i tożsamość wizualna marki</h3>
+              <p class="card-desc">Wektorowy znak graficzny (pliki SVG, EPS, PNG), dobór typografii oraz paleta kolorów z wytycznymi stosowania znaku.</p>
+              <div class="card-footer">
+                <span class="card-tools">Affinity Designer • Wektor</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-chevron-right"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projekt 6: Key Visual -->
+          <article class="project-card" data-category="graphic" data-id="brand-hero">
+            <div class="card-image-wrap">
+              <img src="assets/images/hero_portrait.jpg" alt="Oprawa graficzna i Key Visual marki" loading="lazy">
+              <span class="card-badge"><i class="fa-solid fa-palette"></i> Key Visual</span>
+              <div class="card-overlay">
+                <span class="overlay-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Zobacz szczegóły</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Oprawa graficzna i Key Visual marki</h3>
+              <p class="card-desc">Nowoczesna koncepcja wizualna łącząca studyjną estetykę, szmaragdowe akcenty świetlne oraz dynamiczną kompozycję.</p>
+              <div class="card-footer">
+                <span class="card-tools">Affinity Photo • Social Style</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-chevron-right"></i></span>
               </div>
             </div>
           </article>
@@ -239,157 +263,202 @@
     </section>
 
     <!-- =========================================================================
-         O MNIE & WARTOŚCI (KOMPAKTOWY BLOK)
+         WARSZTAT & PODEJŚCIE DO PRACY
          ========================================================================= -->
-    <section class="about-stack-section">
+    <section id="warsztat" class="about-section">
       <div class="container">
-        <div class="about-stack-card">
-          <div class="card-inner about-stack-inner">
-            <div class="about-left">
-              <span class="section-tag">Warsztat</span>
-              <h2 class="about-title">Podejście do rzemiosła</h2>
-              <p class="about-bio">
-                W montażu wideo stawiam na precyzję cięć, dynamikę tempa i wyrazisty sound design, a w grafice na czytelną typografię i profesjonalne przygotowanie plików do druku.
+        <div class="about-card">
+          <div class="about-grid">
+            
+            <div class="about-info">
+              <span class="section-tag">O rzemiośle</span>
+              <h2 class="about-title">Warsztat i podejście do realizacji</h2>
+              <p class="about-text">
+                W montażu wideo skupiam się na dynamice, tempie i retencji — eliminuję martwe pauzy, projektuję czytelne napisy kinetyczne i buduję wielowarstwowy sound design. W projektach graficznych stawiam na przejrzystą typografię, spójność estetyczną oraz bezbłędne przygotowanie plików do druku (profil barw CMYK, 300 DPI, spady drukarskie).
               </p>
-            </div>
-            <div class="about-right">
-              <div class="stack-list">
-                <div class="stack-badge"><i class="fa-solid fa-video"></i> DaVinci Resolve</div>
-                <div class="stack-badge"><i class="fa-solid fa-scissors"></i> CapCut</div>
-                <div class="stack-badge"><i class="fa-solid fa-pen-nib"></i> Affinity</div>
-                <div class="stack-badge"><i class="fa-solid fa-palette"></i> Canva</div>
+
+              <div class="perks-list">
+                <div class="perk-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span>Sprawny czas realizacji (zazwyczaj 24–48 godzin na zmontowanie rolki)</span>
+                </div>
+                <div class="perk-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span>Eksporty w jakości 1080p lub 4K zoptymalizowane pod algorytmy Instagrama, TikToka i YouTube</span>
+                </div>
+                <div class="perk-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span>Dwie rundy poprawek w cenie każdego zlecenia</span>
+                </div>
               </div>
             </div>
+
+            <div class="about-stack">
+              <h3 class="stack-title">Narzędzia i środowisko pracy:</h3>
+              <div class="stack-grid">
+                <div class="stack-item">
+                  <div class="stack-icon"><i class="fa-solid fa-video"></i></div>
+                  <div class="stack-info">
+                    <strong>DaVinci Resolve</strong>
+                    <span>Montaż, color grading i mastering audio</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="stack-icon"><i class="fa-solid fa-scissors"></i></div>
+                  <div class="stack-info">
+                    <strong>CapCut Pro</strong>
+                    <span>Dynamiczne cięcia krótkich form wideo</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="stack-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                  <div class="stack-info">
+                    <strong>Affinity Designer & Photo</strong>
+                    <span>Grafika wektorowa, rastrowa oraz DTP</span>
+                  </div>
+                </div>
+
+                <div class="stack-item">
+                  <div class="stack-icon"><i class="fa-solid fa-palette"></i></div>
+                  <div class="stack-info">
+                    <strong>Canva</strong>
+                    <span>Szablony i szybkie formaty social media</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         KONTAKT / FOOTER (MINIMALISTYCZNY I FUNKCJONALNY)
+         KONTAKT
          ========================================================================= -->
-    <section id="kontakt" class="contact-footer-section">
+    <section id="kontakt" class="contact-section">
       <div class="container">
         <div class="contact-box">
-          <div class="card-inner contact-inner">
+          
+          <div class="contact-grid">
             
-            <div class="contact-layout">
-              <!-- Lewa kolumna: Info & Bezpośredni kontakt -->
-              <div class="contact-info-col">
-                <span class="section-tag">Współpraca</span>
-                <h2 class="contact-headline">Masz projekt?<br>Porozmawiajmy.</h2>
-                <p class="contact-desc">
-                  Chętnie podejmę się montażu rolek, materiałów reklamowych lub projektów graficznych. Wypełnij krótki formularz lub napisz bezpośrednio.
-                </p>
+            <div class="contact-info">
+              <span class="section-tag">Współpraca</span>
+              <h2 class="contact-title">Masz projekt do zrealizowania?<br>Porozmawiajmy o szczegółach.</h2>
+              <p class="contact-desc">
+                Chętnie podejmę się stałej współpracy przy regularnym montażu wideo, jak również pojedynczych zleceń graficznych i poligraficznych. Skontaktuj się ze mną bezpośrednio lub wypełnij krótki formularz.
+              </p>
 
-                <div class="direct-contact-block">
-                  <span class="direct-label">Bezpośredni e-mail:</span>
-                  <button class="email-badge-btn copy-email-btn" data-email="kontakt@jakubjatkowski.pl" title="Kliknij, aby skopiować">
-                    <span class="email-val">kontakt@jakubjatkowski.pl</span>
-                    <span class="copy-pill"><i class="fa-regular fa-copy"></i> Kopiuj</span>
-                  </button>
-                </div>
-
-                <div class="social-links-wrap">
-                  <span class="direct-label">Media społecznościowe:</span>
-                  <div class="social-row">
-                    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-                      <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
-                      <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
-                      <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://behance.net" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">
-                      <i class="fa-brands fa-behance"></i>
-                    </a>
-                  </div>
-                </div>
+              <div class="direct-email-box">
+                <span class="direct-label">Bezpośredni adres e-mail:</span>
+                <button class="email-btn copy-email-btn" data-email="jakubjatkowski@gmail.com" title="Kliknij, aby skopiować adres e-mail">
+                  <span class="email-text">jakubjatkowski@gmail.com</span>
+                  <span class="copy-pill"><i class="fa-regular fa-copy"></i> Kopiuj</span>
+                </button>
               </div>
 
-              <!-- Prawa kolumna: Formularz kontaktowy -->
-              <div class="contact-form-col">
-                <form id="contactForm" class="minimal-form" novalidate>
-                  
-                  <div class="form-row-2">
-                    <div class="form-field">
-                      <label for="formName" class="field-label">Twoje imię *</label>
-                      <input type="text" id="formName" name="name" class="field-input" placeholder="np. Michał" required>
-                    </div>
-
-                    <div class="form-field">
-                      <label for="formEmail" class="field-label">Adres e-mail *</label>
-                      <input type="email" id="formEmail" name="email" class="field-input" placeholder="np. kontakt@domena.pl" required>
-                    </div>
-                  </div>
-
-                  <div class="form-field">
-                    <label for="formService" class="field-label">Czego dotyczy zlecenie?</label>
-                    <div class="select-wrapper">
-                      <select id="formService" name="service" class="field-input field-select">
-                        <option value="Wideo (Rolki / Shorts / TikTok)">🎬 Montaż Wideo (Rolki / Shorts / TikTok)</option>
-                        <option value="Wideo Reklamowe / Ads">🚀 Wideo Reklamowe / Ads</option>
-                        <option value="Grafika & Social Media">📱 Grafika & Social Media (Posty / Karuzele)</option>
-                        <option value="Materiały do druku (Plakaty / Ulotki)">🎨 Materiały do druku (Plakaty / Ulotki)</option>
-                        <option value="Inne / Pakiet">✨ Inne / Połączenie usług</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="form-field">
-                    <label for="formMessage" class="field-label">Wiadomość / Krótki opis *</label>
-                    <textarea id="formMessage" name="message" class="field-input field-textarea" rows="4" placeholder="Napisz krótko o swoim pomyśle lub potrzebach..." required></textarea>
-                  </div>
-
-                  <button type="submit" id="formSubmitBtn" class="btn btn-primary btn-submit">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <span>Wyślij wiadomość</span>
-                  </button>
-
-                </form>
+              <div class="social-block">
+                <span class="direct-label">Profile społecznościowe:</span>
+                <div class="social-links">
+                  <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="https://behance.net" target="_blank" rel="noopener" class="social-icon" aria-label="Behance">
+                    <i class="fa-brands fa-behance"></i>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <!-- Stopka w dolnej części karty -->
-            <div class="footer-bottom-row">
-              <p class="copyright-text">&copy; 2026 Jakub Jatkowski. Video Editing & Graphic Design.</p>
-              <a href="#hero" class="back-to-top"><i class="fa-solid fa-arrow-up"></i> Powrót na górę</a>
+            <div class="contact-form-wrap">
+              <form id="contactForm" class="contact-form" novalidate>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="formName" class="form-label">Twoje imię lub nazwa firmy *</label>
+                    <input type="text" id="formName" name="name" class="form-input" placeholder="np. Michał" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="formEmail" class="form-label">Adres e-mail *</label>
+                    <input type="email" id="formEmail" name="email" class="form-input" placeholder="np. kontakt@domena.pl" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="formService" class="form-label">Czego dotyczy zlecenie?</label>
+                  <div class="select-wrap">
+                    <select id="formService" name="service" class="form-input form-select">
+                      <option value="Montaż wideo (Rolki / Shorts / TikTok)">🎬 Montaż wideo (Rolki / Shorts / TikTok)</option>
+                      <option value="Wideo reklamowe / kampanie Ads">🚀 Wideo reklamowe / kampanie Ads</option>
+                      <option value="Grafika do social mediów (posty, karuzele)">📱 Grafika do social mediów (posty, karuzele)</option>
+                      <option value="Materiały do druku (plakaty, ulotki, DTP)">🖨 Materiały do druku (plakaty, ulotki, DTP)</option>
+                      <option value="Identyfikacja wizualna i logo">💎 Identyfikacja wizualna i logo</option>
+                      <option value="Stała współpraca miesięczna / pakiet usług">✨ Stała współpraca miesięczna / pakiet usług</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="formMessage" class="form-label">Wiadomość lub krótki opis projektu *</label>
+                  <textarea id="formMessage" name="message" class="form-input form-textarea" rows="4" placeholder="Napisz krótko o swoim pomyśle, szacowanej liczbie materiałów lub pożądanym terminie..." required></textarea>
+                </div>
+
+                <button type="submit" id="formSubmitBtn" class="btn btn-primary btn-submit">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Wyślij wiadomość</span>
+                </button>
+
+              </form>
             </div>
 
           </div>
+
+          <div class="footer-bar">
+            <p class="copyright">&copy; 2026 Jakub Jatkowski. Montaż wideo i projektowanie graficzne.</p>
+            <a href="#hero" class="back-top"><i class="fa-solid fa-arrow-up"></i> Wróć na górę strony</a>
+          </div>
+
         </div>
       </div>
     </section>
   </main>
 
   <!-- =========================================================================
-       MODAL PODGLĄDU PROJEKTU (LIGHTBOX)
+       MODAL LIGHTBOX (SZCZEGÓŁY PROJEKTU)
        ========================================================================= -->
-  <div id="projectModal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-box">
-      <button class="modal-close-btn" aria-label="Zamknij">
+  <div id="projectModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Zamknij podgląd projektu">
         <i class="fa-solid fa-xmark"></i>
       </button>
+      
       <div class="modal-grid">
-        <div class="modal-image-col">
+        <div class="modal-media">
           <img id="modalImg" src="" alt="Podgląd projektu">
         </div>
-        <div class="modal-info-col">
+        <div class="modal-details">
           <span id="modalCat" class="modal-category">Kategoria</span>
-          <h3 id="modalTitle" class="modal-title">Tytuł projektu</h3>
-          <p id="modalDesc" class="modal-description">Opis...</p>
+          <h3 id="modalTitle" class="modal-name">Tytuł projektu</h3>
+          <p id="modalDesc" class="modal-desc">Opis projektu...</p>
           
-          <div class="modal-tags-container">
-            <span class="tags-title">Narzędzia & Technika:</span>
+          <div class="modal-meta-box">
+            <span class="meta-label">Użyte narzędzia i technika:</span>
             <div id="modalTags" class="modal-tags"></div>
           </div>
 
-          <div class="modal-footer-action">
-            <button class="btn btn-primary btn-sm copy-email-btn" data-email="kontakt@jakubjatkowski.pl">
-              <i class="fa-solid fa-paper-plane"></i>
-              <span>Napisz o podobnym projekcie</span>
+          <div class="modal-cta">
+            <button class="btn btn-primary btn-sm copy-email-btn" data-email="jakubjatkowski@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Zapytaj o podobny projekt</span>
             </button>
           </div>
         </div>
@@ -400,7 +469,7 @@
   <!-- Toast Notification -->
   <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-  <!-- Script -->
+  <!-- Javascript -->
   <script src="js/main.js"></script>
 </body>
 </html>
