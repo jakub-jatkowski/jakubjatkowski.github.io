@@ -4,48 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jakub Jatkowski — Video Editor & Graphic Designer</title>
-  <meta name="description" content="Portfolio Jakuba Jatkowskiego. Dynamiczny montaż wideo (Rolki, TikTok, Shorts), wideo reklamowe oraz nowoczesna grafika i DTP.">
-  <meta name="keywords" content="Jakub Jatkowski, video editor, montażysta wideo, rolki, tiktok, montaż da vinci, grafika reklamowa">
+  <meta name="description" content="Portfolio Jakuba Jatkowskiego. Dynamiczny montaż wideo pod Rolki, TikTok i Shorts, wideo reklamowe oraz grafika i identyfikacja wizualna.">
+  <meta name="keywords" content="Jakub Jatkowski, montażysta wideo, video editor, montaż rolek, grafika, dtp">
   <meta name="author" content="Jakub Jatkowski">
 
-  <!-- Open Graph -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Jakub Jatkowski — Video Editor & Graphic Designer">
   <meta property="og:description" content="Dynamiczny montaż krótkich form wideo oraz profesjonalne projekty graficzne.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Space Grotesk (Editorial Headers) & Plus Jakarta Sans (Clean Body) -->
+  <!-- Google Fonts: Syne (Nagłówki) & Plus Jakarta Sans (Treść) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=4.0">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
 
   <!-- =========================================================================
-       NAGŁÓWEK NAWIGACYJNY (FLOATING GLASS NAV)
+       NAGŁÓWEK / NAWIGACJA
        ========================================================================= -->
-  <header class="navbar-wrapper">
-    <div class="container navbar-container">
-      <a href="#hero" class="brand-link">
-        <span class="brand-avatar">JJ</span>
-        <span class="brand-text">Jakub Jatkowski</span>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo">
+        <span class="brand-symbol">J</span>
+        <span class="brand-title">Jakub Jatkowski</span>
       </a>
 
-      <nav class="nav-links-wrap">
-        <a href="#projekty" class="nav-link">Projekty</a>
-        <a href="#warsztat" class="nav-link">Warsztat</a>
-        <a href="#kontakt" class="nav-link">Kontakt</a>
+      <nav class="nav-menu">
+        <a href="#projekty" class="nav-item">Projekty</a>
+        <a href="#o-mnie" class="nav-item">O mnie</a>
+        <a href="#proces" class="nav-item">Współpraca</a>
+        <a href="#kontakt" class="nav-item">Kontakt</a>
       </nav>
 
-      <div class="nav-cta-wrap">
-        <button class="btn btn-nav copy-email-btn" data-email="jakubjatkowski@gmail.com">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Napisz</span>
+      <div class="header-action">
+        <button class="btn btn-outline btn-sm copy-email-btn" data-email="jakubjatkowski@gmail.com">
+          <i class="fa-regular fa-copy"></i>
+          <span>Kopiuj e-mail</span>
         </button>
       </div>
     </div>
@@ -53,74 +54,83 @@
 
   <main>
     <!-- =========================================================================
-       HERO SECTION — STUDIO EDITORIAL & PORTRAIT SHOWCASE
-       ========================================================================= -->
+         SEKCJA HERO (NOWY UKŁAD STUDYJNY)
+         ========================================================================= -->
     <section id="hero" class="hero-section">
       <div class="container">
-        <div class="hero-grid">
+        <div class="hero-layout">
           
-          <!-- Lewa kolumna: Nagłówek i opis -->
-          <div class="hero-content">
+          <!-- Lewa kolumna: Tekst i CTA -->
+          <div class="hero-text-block">
             
-            <div class="hero-badge-live">
-              <span class="pulse-beacon"></span>
-              <span>Dostępny do nowych projektów</span>
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              <span>Dostępny do zleceń i stałej współpracy</span>
             </div>
 
-            <h1 class="hero-main-title">
-              Tworzę <span class="typewriter-text" id="typeDynamic" data-phrases='["Rolki", "Wideo", "Grafikę", "Karuzele"]'>Rolki</span><span class="typewriter-bar" id="cursorDynamic"></span><br>
-              które przyciągają uwagę i budują retencję.
+            <h1 class="hero-title">
+              Montaż wideo i design,<br>
+              które budują <span class="highlight-text">uwagę</span>.
             </h1>
 
-            <p class="hero-subtext">
-              Łączę dynamiczny montaż wideo pod formaty <strong>9:16 (TikTok, Reels, Shorts)</strong> z przemyślanym sound designem oraz nowoczesnym projektowaniem graficznym do social mediów i druku.
+            <p class="hero-lead">
+              Tworzę dynamiczne krótkie formy wideo <strong>(Rolki, TikTok, Shorts)</strong> z naciskiem na retencję i tempo oraz projektuję spójną grafikę do social mediów i druku.
             </p>
 
-            <div class="hero-pill-features">
-              <span class="feature-chip"><i class="fa-solid fa-bolt"></i> Dynamiczny Rytm</span>
-              <span class="feature-chip"><i class="fa-solid fa-volume-high"></i> Warstwowy Dźwięk</span>
-              <span class="feature-chip"><i class="fa-solid fa-pen-nib"></i> Czyste DTP</span>
-            </div>
-
-            <div class="hero-actions-group">
+            <div class="hero-button-row">
               <a href="#projekty" class="btn btn-primary">
-                <span>Zobacz projekty</span>
+                <span>Zobacz realizacje</span>
                 <i class="fa-solid fa-arrow-down"></i>
               </a>
-              <button class="btn btn-secondary copy-email-btn" data-email="jakubjatkowski@gmail.com" title="Kliknij, aby skopiować adres">
-                <i class="fa-regular fa-copy"></i>
-                <span class="email-address-text">jakubjatkowski@gmail.com</span>
-              </button>
+              <a href="#kontakt" class="btn btn-secondary">
+                <span>Porozmawiajmy</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </a>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="stat-box">
+                <span class="stat-number">9:16</span>
+                <span class="stat-label">Format pod social media</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-box">
+                <span class="stat-number">4K / HD</span>
+                <span class="stat-label">DaVinci & CapCut Pro</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-box">
+                <span class="stat-number">DTP</span>
+                <span class="stat-label">Przygotowanie do druku</span>
+              </div>
             </div>
 
           </div>
 
-          <!-- Prawa kolumna: Karta Studyjna ze Zdjęciem -->
-          <div class="hero-stage-col">
-            <div class="studio-card-frame">
+          <!-- Prawa kolumna: Zdjęcie Jakuba w eleganckiej ramie studyjnej -->
+          <div class="hero-portrait-block">
+            <div class="portrait-stage">
               
-              <!-- Ambientowe tło studyjne -->
-              <div class="studio-light-backdrop"></div>
+              <div class="portrait-glow"></div>
               
-              <!-- Zdjęcie Jakuba -->
-              <div class="portrait-image-wrap">
-                <img src="assets/images/jakub.png" alt="Jakub Jatkowski — Video Editor & Designer" class="portrait-img">
+              <div class="portrait-frame">
+                <img src="assets/images/jakub.png" alt="Jakub Jatkowski — Video Editor & Graphic Designer" class="portrait-image">
               </div>
 
-              <!-- Pływające pigułki metryk -->
-              <div class="floating-badge badge-top-right">
-                <div class="badge-icon-box"><i class="fa-solid fa-video"></i></div>
-                <div class="badge-text-box">
-                  <strong>Format 9:16</strong>
-                  <small>Optymalizacja uwagi</small>
+              <!-- Pływające plakietki -->
+              <div class="feature-badge badge-top">
+                <div class="badge-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="badge-content">
+                  <strong>Dynamiczny montaż</strong>
+                  <span>Cięcia & Sound design</span>
                 </div>
               </div>
 
-              <div class="floating-badge badge-bottom-left">
-                <div class="badge-icon-box"><i class="fa-solid fa-layer-group"></i></div>
-                <div class="badge-text-box">
-                  <strong>Design & Wideo</strong>
-                  <small>Kompleksowa realizacja</small>
+              <div class="feature-badge badge-bottom">
+                <div class="badge-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="badge-content">
+                  <strong>Kompleksowy design</strong>
+                  <span>Grafika, karuzele & logo</span>
                 </div>
               </div>
 
@@ -132,151 +142,118 @@
     </section>
 
     <!-- =========================================================================
-       PASEK LOGO / TICKER UMIEJĘTNOŚCI
-       ========================================================================= -->
-    <div class="skills-ticker-strip">
-      <div class="ticker-track">
-        <span>🎬 DAVINCI RESOLVE</span>
-        <span>•</span>
-        <span>🚀 REELS & TIKTOK</span>
-        <span>•</span>
-        <span>🎧 SOUND DESIGN</span>
-        <span>•</span>
-        <span>📱 KARUZELE & SOCIAL</span>
-        <span>•</span>
-        <span>🎨 BRANDING & LOGO</span>
-        <span>•</span>
-        <span>🖨️ PRZYGOTOWANIE DTP</span>
-        <span>•</span>
-        <span>⚡ CAPCUT PRO</span>
-        <span>•</span>
-        <span>🎬 DAVINCI RESOLVE</span>
-        <span>•</span>
-        <span>🚀 REELS & TIKTOK</span>
-        <span>•</span>
-        <span>🎧 SOUND DESIGN</span>
-        <span>•</span>
-        <span>📱 KARUZELE & SOCIAL</span>
-        <span>•</span>
-        <span>🎨 BRANDING & LOGO</span>
-        <span>•</span>
-        <span>🖨️ PRZYGOTOWANIE DTP</span>
-      </div>
-    </div>
-
-    <!-- =========================================================================
-       SEKCJA PORTFOLIO (BENTO & PROJEKTY)
-       ========================================================================= -->
-    <section id="projekty" class="portfolio-section">
+         SEKCJA PROJEKTY (PORTFOLIO)
+         ========================================================================= -->
+    <section id="projekty" class="projects-section">
       <div class="container">
         
-        <div class="section-headline-row">
+        <div class="section-header">
           <div>
-            <span class="section-tag-label">Wybrane Prace</span>
-            <h2 class="section-main-heading">Portfolio realizacji</h2>
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Wybrane projekty</h2>
           </div>
 
           <!-- Filtry -->
-          <div class="category-filter-bar">
-            <button class="filter-pill-btn active" data-filter="all">Wszystkie</button>
-            <button class="filter-pill-btn" data-filter="video">Wideo</button>
-            <button class="filter-pill-btn" data-filter="graphic">Grafika & Druk</button>
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">Wszystkie</button>
+            <button class="filter-btn" data-filter="video">Wideo</button>
+            <button class="filter-btn" data-filter="graphic">Grafika & Druk</button>
           </div>
         </div>
 
-        <div class="portfolio-grid">
+        <div class="projects-grid">
 
           <!-- Projekt 1: Reel 1 -->
-          <article class="project-bento-card" data-category="video" data-id="reel-1">
-            <div class="project-thumb-box">
+          <article class="project-card" data-category="video" data-id="reel-1">
+            <div class="card-thumb">
               <img src="assets/images/reel_preview.jpg" alt="Dynamiczny montaż rolki edukacyjnej" loading="lazy">
-              <span class="thumb-tag">Wideo • 9:16</span>
-              <div class="thumb-hover-overlay">
-                <span class="hover-play-btn"><i class="fa-solid fa-play"></i> Podgląd</span>
+              <span class="card-pill">Wideo • 9:16</span>
+              <div class="card-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-play"></i> Zobacz montaż</span>
               </div>
             </div>
-            <div class="project-info-box">
-              <h3 class="project-heading">Dynamiczny montaż rolki edukacyjnej</h3>
-              <p class="project-summary">Format pionowy, kinetyczne napisy, wycięte pauzy i warstwowy sound design zoptymalizowany pod retencję.</p>
-              <div class="project-meta-row">
-                <span class="meta-tool">DaVinci Resolve • CapCut</span>
-                <span class="meta-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="card-body">
+              <h3 class="card-title">Dynamiczny montaż rolki edukacyjnej</h3>
+              <p class="card-description">Format pionowy 9:16, wycięte pauzy, kinetyczne napisy i warstwowy sound design pod wysokie zaangażowanie.</p>
+              <div class="card-footer">
+                <span class="card-tech">DaVinci Resolve • CapCut</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </div>
           </article>
 
           <!-- Projekt 2: Reel 2 -->
-          <article class="project-bento-card" data-category="video" data-id="reel-2">
-            <div class="project-thumb-box">
+          <article class="project-card" data-category="video" data-id="reel-2">
+            <div class="card-thumb">
               <img src="assets/images/ads_showcase.jpg" alt="Wideo produktowe pod social media" loading="lazy">
-              <span class="thumb-tag">Reklama • Ads</span>
-              <div class="thumb-hover-overlay">
-                <span class="hover-play-btn"><i class="fa-solid fa-play"></i> Podgląd</span>
+              <span class="card-pill">Reklama • Ads</span>
+              <div class="card-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-play"></i> Zobacz montaż</span>
               </div>
             </div>
-            <div class="project-info-box">
-              <h3 class="project-heading">Wideo produktowe pod social media</h3>
-              <p class="project-summary">Szybkie przejścia montażowe, dynamiczne animacje tekstowe oraz zsynchronizowany podkład muzyczny.</p>
-              <div class="project-meta-row">
-                <span class="meta-tool">CapCut • DaVinci</span>
-                <span class="meta-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Projekt 3: Social Grid -->
-          <article class="project-bento-card" data-category="graphic" data-id="social-1">
-            <div class="project-thumb-box">
-              <img src="assets/images/social_grid.jpg" alt="Siatka postów i karuzela" loading="lazy">
-              <span class="thumb-tag">Social Media</span>
-              <div class="thumb-hover-overlay">
-                <span class="hover-play-btn"><i class="fa-solid fa-eye"></i> Zobacz</span>
-              </div>
-            </div>
-            <div class="project-info-box">
-              <h3 class="project-heading">Siatka postów na profil & karuzela</h3>
-              <p class="project-summary">Spójna identyfikacja profilu: zestaw infografik, wyróżnione relacje oraz wieloslajdowa karuzela.</p>
-              <div class="project-meta-row">
-                <span class="meta-tool">Affinity • Canva</span>
-                <span class="meta-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="card-body">
+              <h3 class="card-title">Wideo produktowe pod social media</h3>
+              <p class="card-description">Krótki format promocyjny: szybkie przejścia produktowe, animacje tekstowe i zsynchronizowana muzyka.</p>
+              <div class="card-footer">
+                <span class="card-tech">CapCut • DaVinci</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </div>
           </article>
 
-          <!-- Projekt 4: DTP -->
-          <article class="project-bento-card" data-category="graphic" data-id="dtp-1">
-            <div class="project-thumb-box">
-              <img src="assets/images/dtp_print_mockup.jpg" alt="Materiały do druku" loading="lazy">
-              <span class="thumb-tag">Druk • Poligrafia</span>
-              <div class="thumb-hover-overlay">
-                <span class="hover-play-btn"><i class="fa-solid fa-eye"></i> Zobacz pliki</span>
+          <!-- Projekt 3: Social Media -->
+          <article class="project-card" data-category="graphic" data-id="social-1">
+            <div class="card-thumb">
+              <img src="assets/images/social_grid.jpg" alt="Siatka postów na profil i karuzela" loading="lazy">
+              <span class="card-pill">Social Media</span>
+              <div class="card-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-eye"></i> Zobacz projekt</span>
               </div>
             </div>
-            <div class="project-info-box">
-              <h3 class="project-heading">Plakat promocyjny i materiały do druku</h3>
-              <p class="project-summary">Przygotowanie plików do druku: plakat B1, rollup oraz ulotki (CMYK, spady 3mm, wektoryzowane fonty).</p>
-              <div class="project-meta-row">
-                <span class="meta-tool">Affinity • Druk CMYK</span>
-                <span class="meta-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="card-body">
+              <h3 class="card-title">Siatka postów na profil & karuzela</h3>
+              <p class="card-description">Kompletna identyfikacja wizualna profilu: infografiki, ikony wyróżnionych relacji oraz wieloslajdowa karuzela.</p>
+              <div class="card-footer">
+                <span class="card-tech">Affinity • Canva</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </div>
           </article>
 
-          <!-- Projekt 5: Branding -->
-          <article class="project-bento-card" data-category="graphic" data-id="branding-1">
-            <div class="project-thumb-box">
-              <img src="assets/images/branding_showcase.jpg" alt="Identyfikacja wizualna i logo" loading="lazy">
-              <span class="thumb-tag">Branding</span>
-              <div class="thumb-hover-overlay">
-                <span class="hover-play-btn"><i class="fa-solid fa-eye"></i> Zobacz znak</span>
+          <!-- Projekt 4: DTP & Plakat -->
+          <article class="project-card" data-category="graphic" data-id="dtp-1">
+            <div class="card-thumb">
+              <img src="assets/images/dtp_print_mockup.jpg" alt="Plakat promocyjny i materiały do druku" loading="lazy">
+              <span class="card-pill">Druk • Poligrafia</span>
+              <div class="card-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-eye"></i> Zobacz pliki</span>
               </div>
             </div>
-            <div class="project-info-box">
-              <h3 class="project-heading">Projekt logo & tożsamość marki</h3>
-              <p class="project-summary">Wektorowy znak graficzny (SVG/EPS), dobór krojów pisma oraz paleta kolorów z wytycznymi stosowania.</p>
-              <div class="project-meta-row">
-                <span class="meta-tool">Affinity • Wektor</span>
-                <span class="meta-action">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="card-body">
+              <h3 class="card-title">Plakat promocyjny i materiały do druku</h3>
+              <p class="card-description">Przygotowanie plików do druku: plakat B1, rollup oraz ulotki (CMYK, spady 3mm, marginesy bezpieczeństwa).</p>
+              <div class="card-footer">
+                <span class="card-tech">Affinity • Druk CMYK</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projekt 5: Branding & Logo -->
+          <article class="project-card" data-category="graphic" data-id="branding-1">
+            <div class="card-thumb">
+              <img src="assets/images/branding_showcase.jpg" alt="Projekt logo i tożsamość marki" loading="lazy">
+              <span class="card-pill">Branding</span>
+              <div class="card-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-eye"></i> Zobacz znak</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Projekt logo & tożsamość marki</h3>
+              <p class="card-description">Wektorowy znak graficzny (SVG/EPS), dobór krojów pisma oraz paleta kolorów z wytycznymi stosowania znaku.</p>
+              <div class="card-footer">
+                <span class="card-tech">Affinity • Wektor</span>
+                <span class="card-link">Szczegóły <i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </div>
           </article>
@@ -286,46 +263,46 @@
     </section>
 
     <!-- =========================================================================
-       SEKCJA WARSZTAT & ZAPLECZE
-       ========================================================================= -->
-    <section id="warsztat" class="workshop-section">
+         SEKCJA O MNIE & WARSZTAT
+         ========================================================================= -->
+    <section id="o-mnie" class="about-section">
       <div class="container">
-        <div class="workshop-bento-card">
-          <div class="workshop-col-left">
-            <span class="section-tag-label">Standard Pracy</span>
-            <h2 class="workshop-heading">Precyzja w montażu & dbałość o detal</h2>
-            <p class="workshop-desc">
-              Każdy projekt traktuję indywidualnie — w rolkach kluczowe jest pierwsze 3 sekundy i utrzymanie dynamiki cięć, a w projektach graficznych perfekcyjna czytelność oraz bezbłędne przygotowanie plików produkcyjnych.
+        <div class="about-box">
+          <div class="about-left">
+            <span class="section-tag">Warsztat</span>
+            <h2 class="about-title">Jak pracuję?</h2>
+            <p class="about-text">
+              W montażu wideo skupiam się na utrzymaniu rytmu i retencji widza: eliminuję martwe punkty, dopasowuję warstwy audio i tworzę czytelne napisy. W grafice stawiam na przejrzystość, proporcje i rzetelne przygotowanie techniczne plików do druku oraz social mediów.
             </p>
           </div>
-          <div class="workshop-col-right">
-            <div class="tools-grid">
-              <div class="tool-badge-item">
+          <div class="about-right">
+            <div class="software-grid">
+              <div class="software-card">
                 <i class="fa-solid fa-video"></i>
-                <div class="tool-badge-info">
+                <div>
                   <strong>DaVinci Resolve</strong>
                   <span>Montaż & Color Grading</span>
                 </div>
               </div>
-              <div class="tool-badge-item">
+              <div class="software-card">
                 <i class="fa-solid fa-scissors"></i>
-                <div class="tool-badge-info">
+                <div>
                   <strong>CapCut Pro</strong>
                   <span>Krótkie formy & Napisy</span>
                 </div>
               </div>
-              <div class="tool-badge-item">
+              <div class="software-card">
                 <i class="fa-solid fa-pen-nib"></i>
-                <div class="tool-badge-info">
-                  <strong>Affinity</strong>
-                  <span>Wektory & Poligrafia DTP</span>
+                <div>
+                  <strong>Affinity Suite</strong>
+                  <span>Wektory & Skład DTP</span>
                 </div>
               </div>
-              <div class="tool-badge-item">
+              <div class="software-card">
                 <i class="fa-solid fa-palette"></i>
-                <div class="tool-badge-info">
+                <div>
                   <strong>Canva Pro</strong>
-                  <span>Social Media & Layouty</span>
+                  <span>Layouty Social Media</span>
                 </div>
               </div>
             </div>
@@ -335,104 +312,130 @@
     </section>
 
     <!-- =========================================================================
-       SEKCJA KONTAKTOWA
-       ========================================================================= -->
+         SEKCJA PROCES WSPÓŁPRACY
+         ========================================================================= -->
+    <section id="proces" class="process-section">
+      <div class="container">
+        <div class="section-header-centered">
+          <span class="section-tag">Proces</span>
+          <h2 class="section-title">3 proste kroki współpracy</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <span class="step-num">01</span>
+            <h3 class="step-title">Brief & Materiały</h3>
+            <p class="step-desc">Przesyłasz surowe nagrania lub wytyczne graficzne oraz cel, jaki chcesz osiągnąć.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-num">02</span>
+            <h3 class="step-title">Montaż & Wersja Robocza</h3>
+            <p class="step-desc">Otrzymujesz pierwszą wersję wideo lub projekt do wglądu i oceny.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-num">03</span>
+            <h3 class="step-title">Poprawki & Finalny Plik</h3>
+            <p class="step-desc">Wprowadzamy ewentualne szlify i przekazuję gotowe pliki w pełnej jakości produkcyjnej.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEKCJA KONTAKTOWA
+         ========================================================================= -->
     <section id="kontakt" class="contact-section">
       <div class="container">
-        <div class="contact-card-box">
-          <div class="contact-grid-layout">
-            
-            <!-- Lewa kolumna: Bezpośredni kontakt -->
-            <div class="contact-info-col">
-              <span class="section-tag-label">Współpraca</span>
-              <h2 class="contact-main-heading">Masz projekt?<br>Porozmawiajmy.</h2>
-              <p class="contact-subtext">
-                Chętnie podejmę się stałej współpracy lub realizacji pojedynczego zlecenia. Napisz przez formularz lub skontaktuj się bezpośrednio.
-              </p>
+        <div class="contact-wrapper">
+          
+          <div class="contact-left">
+            <span class="section-tag">Kontakt</span>
+            <h2 class="contact-heading">Zrealizujmy Twój projekt</h2>
+            <p class="contact-lead">
+              Napisz do mnie bezpośrednio lub wypełnij krótki formularz, a odpowiem tak szybko, jak to możliwe.
+            </p>
 
-              <div class="direct-email-group">
-                <span class="direct-label-small">Bezpośredni adres e-mail:</span>
-                <button class="email-action-box copy-email-btn" data-email="jakubjatkowski@gmail.com">
-                  <span class="email-text-val">jakubjatkowski@gmail.com</span>
-                  <span class="copy-action-pill"><i class="fa-regular fa-copy"></i> Kopiuj</span>
-                </button>
-              </div>
-
-              <div class="social-block">
-                <span class="direct-label-small">Social media:</span>
-                <div class="social-icons-row">
-                  <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                  <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                  </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                  </a>
-                  <a href="https://behance.net" target="_blank" rel="noopener" class="social-link-btn" aria-label="Behance">
-                    <i class="fa-brands fa-behance"></i>
-                  </a>
-                </div>
-              </div>
+            <div class="direct-email-card">
+              <span class="email-label">Adres e-mail:</span>
+              <button class="email-button copy-email-btn" data-email="jakubjatkowski@gmail.com">
+                <span class="email-address">jakubjatkowski@gmail.com</span>
+                <span class="copy-pill"><i class="fa-regular fa-copy"></i> Kopiuj</span>
+              </button>
             </div>
 
-            <!-- Prawa kolumna: Bezpośredni i bezpieczny formularz -->
-            <div class="contact-form-col">
-              <form id="contactForm" class="contact-form-inner" novalidate>
-                
-                <!-- Honeypot Trap (antyspam) -->
-                <div class="security-trap" aria-hidden="true" style="display:none!important;visibility:hidden;position:absolute;left:-9999px;opacity:0;">
-                  <label for="formHoneypot">Nie wypełniaj</label>
-                  <input type="text" id="formHoneypot" name="user_verification_trap" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div class="form-double-row">
-                  <div class="form-item">
-                    <label for="formName" class="form-item-label">Twoje imię / Firma *</label>
-                    <input type="text" id="formName" name="name" class="form-item-input" placeholder="np. Michał" maxlength="80" required>
-                  </div>
-                  <div class="form-item">
-                    <label for="formEmail" class="form-item-label">Adres e-mail *</label>
-                    <input type="email" id="formEmail" name="email" class="form-item-input" placeholder="np. kontakt@domena.pl" maxlength="100" required>
-                  </div>
-                </div>
-
-                <div class="form-item">
-                  <label for="formService" class="form-item-label">Czego dotyczy zapytanie?</label>
-                  <div class="select-box-wrap">
-                    <select id="formService" name="service" class="form-item-input form-item-select">
-                      <option value="Montaż wideo (Rolki / Shorts / TikTok)">🎬 Montaż Wideo (Rolki / Shorts / TikTok)</option>
-                      <option value="Wideo Reklamowe / Ads">🚀 Wideo Reklamowe / Ads</option>
-                      <option value="Grafika Social Media (Posty / Karuzele)">📱 Grafika Social Media (Posty / Karuzele)</option>
-                      <option value="Materiały do druku (Plakaty / DTP)">🎨 Materiały do druku (Plakaty / DTP)</option>
-                      <option value="Identyfikacja wizualna & Logo">💎 Identyfikacja wizualna & Logo</option>
-                      <option value="Stała współpraca miesięczna">✨ Stała współpraca miesięczna</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-item">
-                  <label for="formMessage" class="form-item-label">Treść wiadomości *</label>
-                  <textarea id="formMessage" name="message" class="form-item-input form-item-textarea" rows="4" placeholder="Opisz krótko swój projekt lub potrzeby..." maxlength="2000" required></textarea>
-                </div>
-
-                <button type="submit" id="formSubmitBtn" class="btn btn-primary btn-submit-form">
-                  <i class="fa-solid fa-paper-plane"></i>
-                  <span>Wyślij bezpośrednio</span>
-                </button>
-
-              </form>
+            <div class="social-wrapper">
+              <span class="email-label">Social media:</span>
+              <div class="social-buttons">
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+                  <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://behance.net" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">
+                  <i class="fa-brands fa-behance"></i>
+                </a>
+              </div>
             </div>
-
           </div>
 
-          <div class="contact-footer-bar">
-            <p class="copyright-line">&copy; 2026 Jakub Jatkowski. Video Editing & Graphic Design.</p>
-            <a href="#hero" class="back-top-link"><i class="fa-solid fa-arrow-up"></i> Wróć na górę</a>
+          <div class="contact-right">
+            <form id="contactForm" class="contact-form" novalidate>
+              
+              <!-- Zabezpieczenie antyspamowe (Honeypot Trap) -->
+              <div class="security-trap" aria-hidden="true" style="display:none!important;visibility:hidden;position:absolute;left:-9999px;opacity:0;">
+                <label for="formHoneypot">Nie wypełniaj</label>
+                <input type="text" id="formHoneypot" name="user_verification_trap" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="formName" class="form-label">Imię / Firma *</label>
+                  <input type="text" id="formName" name="name" class="form-input" placeholder="np. Michał" maxlength="80" required>
+                </div>
+                <div class="form-group">
+                  <label for="formEmail" class="form-label">Adres e-mail *</label>
+                  <input type="email" id="formEmail" name="email" class="form-input" placeholder="np. kontakt@domena.pl" maxlength="100" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formService" class="form-label">Zakres projektu</label>
+                <div class="select-container">
+                  <select id="formService" name="service" class="form-input form-select">
+                    <option value="Montaż wideo (Rolki / Shorts / TikTok)">🎬 Montaż Wideo (Rolki / Shorts / TikTok)</option>
+                    <option value="Wideo Reklamowe / Ads">🚀 Wideo Reklamowe / Ads</option>
+                    <option value="Grafika Social Media (Posty / Karuzele)">📱 Grafika Social Media (Posty / Karuzele)</option>
+                    <option value="Materiały do druku (Plakaty / DTP)">🎨 Materiały do druku (Plakaty / DTP)</option>
+                    <option value="Identyfikacja wizualna & Logo">💎 Identyfikacja wizualna & Logo</option>
+                    <option value="Stała współpraca miesięczna">✨ Stała współpraca miesięczna</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label">Wiadomość *</label>
+                <textarea id="formMessage" name="message" class="form-input form-textarea" rows="4" placeholder="Napisz krótko o swoich potrzebach..." maxlength="2000" required></textarea>
+              </div>
+
+              <button type="submit" id="formSubmitBtn" class="btn btn-primary btn-submit">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Wyślij bezpośrednio</span>
+              </button>
+
+            </form>
           </div>
 
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Jakub Jatkowski. Video Editing & Graphic Design.</p>
+          <a href="#hero" class="back-top"><i class="fa-solid fa-arrow-up"></i> Do góry</a>
+        </div>
+
       </div>
     </section>
   </main>
@@ -473,7 +476,7 @@
   <!-- Toast Notification -->
   <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-  <!-- Script Engine -->
-  <script src="js/main.js?v=4.0"></script>
+  <!-- JavaScript Engine -->
+  <script src="js/main.js?v=5.0"></script>
 </body>
 </html>
