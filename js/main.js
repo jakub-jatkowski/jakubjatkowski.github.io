@@ -1,20 +1,20 @@
 /**
  * JAKUB JATKOWSKI — PORTFOLIO JAVASCRIPT ENGINE
- * Zoptymalizowany, lekki skrypt obsługujący interakcje, modal i formularz.
+ * Efekt WOW: Smooth Typewriter (Pisanie i usuwanie litera po literze) & Live 24 FPS Timecode (Zero Gradients)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTypewriter();
+  initHeroTypewriter();
   initPortfolioFilters();
   initProjectLightbox();
   initEmailCopy();
   initContactForm();
 });
 
-/* ==========================================================================
-   1. TYPEWRITER (PŁYNNA ZMIANA FRAZ W NAGŁÓWKU HERO)
-   ========================================================================== */
-class Typewriter {
+/* --------------------------------------------------------------------------
+   1. SILNIK TYPEWRITER (PISANIE -> PAUZA -> USUWANIE BACKSPACE -> KOLEJNY NAPIS)
+   -------------------------------------------------------------------------- */
+class TypewriterSlot {
   constructor(wordEl, cursorEl, phrases, options = {}) {
     this.wordEl = wordEl;
     this.cursorEl = cursorEl;
@@ -23,9 +23,9 @@ class Typewriter {
     this.charIndex = phrases[0] ? phrases[0].length : 0;
     this.isDeleting = false;
 
-    this.typeSpeed = options.typeSpeed || 60;
-    this.deleteSpeed = options.deleteSpeed || 28;
-    this.pauseDuration = options.pauseDuration || 2200;
+    this.typeSpeed = options.typeSpeed || 75;
+    this.deleteSpeed = options.deleteSpeed || 35;
+    this.pauseDuration = options.pauseDuration || 3600;
 
     this.timer = null;
   }
@@ -79,7 +79,7 @@ class Typewriter {
   }
 }
 
-function initTypewriter() {
+function initHeroTypewriter() {
   const dynamicEl = document.getElementById('typeDynamic');
   const cursorEl = document.getElementById('cursorDynamic');
 
@@ -88,28 +88,31 @@ function initTypewriter() {
   const phrases = JSON.parse(dynamicEl.getAttribute('data-phrases') || '[]');
   if (!phrases.length) return;
 
+  // Ustawienie początkowego tekstu
   dynamicEl.textContent = phrases[0];
 
-  const typewriter = new Typewriter(dynamicEl, cursorEl, phrases, {
-    typeSpeed: 55,
-    deleteSpeed: 25,
-    pauseDuration: 2000
+  const typewriter = new TypewriterSlot(dynamicEl, cursorEl, phrases, {
+    typeSpeed: 50,
+    deleteSpeed: 24,
+    pauseDuration: 1500
   });
 
+  // Start po początkowej pauzie
   typewriter.start(1400);
 
+  // Kliknięcie / dotknięcie natychmiast usuwa i pisze kolejną frazę
   dynamicEl.addEventListener('click', (e) => {
     e.preventDefault();
     typewriter.next();
   });
 }
 
-/* ==========================================================================
+/* --------------------------------------------------------------------------
    2. FILTRY KATEGORII W PORTFOLIO
-   ========================================================================== */
+   -------------------------------------------------------------------------- */
 function initPortfolioFilters() {
-  const tabs = document.querySelectorAll('.filter-tabs .tab-btn');
-  const cards = document.querySelectorAll('.project-card');
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cards = document.querySelectorAll('.work-card');
 
   if (!tabs.length || !cards.length) return;
 
@@ -132,57 +135,50 @@ function initPortfolioFilters() {
   });
 }
 
-/* ==========================================================================
-   3. LIGHTBOX MODAL Z DANYMI PROJEKTÓW
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   4. DANE I LIGHTBOX PODGLĄDU PROJEKTU
+   -------------------------------------------------------------------------- */
 const projectsData = {
   'reel-1': {
     title: 'Dynamiczny montaż rolki edukacyjnej',
     category: 'Wideo • Rolki / Shorts / TikTok',
-    desc: 'Montaż w formacie pionowym (9:16) zaprojektowany pod maksymalne utrzymanie uwagi widza. Precyzyjne cięcia eliminujące pauzy w wypowiedzi, kinetyczne napisy z akcentami kolorystycznymi oraz warstwowy sound design podbijający najważniejsze punkty merytoryczne.',
-    tags: ['DaVinci Resolve', 'CapCut Pro', 'Format pionowy 9:16', 'Sound Design SFX', 'Kinetyczne napisy', 'Eksport 4K 60FPS'],
+    desc: 'Projekt montażowy w formacie 9:16 zoptymalizowany pod utrzymanie uwagi. Precyzyjne cięcia, wycięte pauzy, kinetyczne i kontrastowe napisy oraz dopasowany warstwowy sound design.',
+    tags: ['DaVinci Resolve', 'CapCut', 'Format 9:16', 'Sound Design', 'Kinetyczne Napisy'],
     img: 'assets/images/reel_preview.jpg'
   },
   'reel-2': {
-    title: 'Wideo produktowe pod social media & ads',
+    title: 'Wideo produktowe pod social media',
     category: 'Wideo • Reklama & Ads',
-    desc: 'Dynamiczny format promocyjny stworzony do płatnych kampanii reklamowych (Meta Ads, TikTok Ads) oraz publikacji organicznych. Szybkie przejścia montażowe, płynne prezentacje cech produktu oraz podkład muzyczny precyzyjnie zgrany z rytmem ujęć.',
-    tags: ['CapCut Pro', 'DaVinci Resolve', 'Wideo reklamowe Ads', 'Color Grading', 'Krótkie formy'],
+    desc: 'Krótki format promocyjny do kampanii płatnych i organicznych. Dynamiczne przejścia produktowe, animacje tekstowe oraz podkład muzyczny zsynchronizowany z ujęciami.',
+    tags: ['CapCut', 'DaVinci Resolve', 'Wideo Ads', 'Krótkie Formy'],
     img: 'assets/images/ads_showcase.jpg'
   },
   'social-1': {
-    title: 'Siatka postów na profil i karuzela edukacyjna',
+    title: 'Siatka postów na profil & karuzela',
     category: 'Grafika • Social Media',
-    desc: 'Kompleksowa identyfikacja wizualna profilu: spójna siatka postów, zestaw ikon relacji wyróżnionych (Stories Highlights) oraz wieloslajdowa karuzela edukacyjna łącząca przejrzystą infografikę z nowoczesną typografią.',
-    tags: ['Affinity Designer', 'Canva', 'Siatka Instagram', 'Karuzele edukacyjne', 'Typografia'],
+    desc: 'Kompletna identyfikacja wizualna profilu: spójna siatka postów, zestaw ikon relacji wyróżnionych oraz wieloslajdowa karuzela z przejrzystą infografiką.',
+    tags: ['Affinity', 'Canva', 'Instagram Grid', 'Karuzele'],
     img: 'assets/images/social_grid.jpg'
   },
   'dtp-1': {
-    title: 'Plakat promocyjny i materiały poligraficzne',
-    category: 'Druk • Poligrafia (CMYK 300 DPI)',
-    desc: 'Profesjonalne przygotowanie materiałów do druku: plakat wielkoformatowy B1, rollup 85x200 cm oraz ulotki. Prawidłowy profil kolorystyczny CMYK (ISO Coated v2 / FOGRA39), 3 mm spadu drukarskiego, marginesy bezpieczeństwa i wektoryzacja wszystkich fontów.',
-    tags: ['Affinity Designer', 'Druk CMYK (FOGRA39)', 'Spady 3 mm', 'Pliki produkcyjne PDF/X-1a', '300 DPI'],
+    title: 'Plakat promocyjny i materiały do druku',
+    category: 'Druk • Poligrafia (CMYK)',
+    desc: 'Przygotowanie zestawu poligraficznego do druku: plakat B1, roll-up 85x200 oraz ulotki. Prawidłowy profil barw CMYK, spad 3mm, wektoryzowane fonty i marginesy bezpieczeństwa.',
+    tags: ['Affinity', 'Druk CMYK', 'Spady 3mm', 'Pliki PDF/X'],
     img: 'assets/images/dtp_print_mockup.jpg'
   },
   'branding-1': {
-    title: 'Projekt logo i tożsamość wizualna marki',
-    category: 'Branding • Identyfikacja Wizualna',
-    desc: 'Projekt wektorowego logo wraz z kompletną paczką plików produkcyjnych (SVG, EPS, PDF, PNG), doborem krojów pisma oraz harmonijną paletą barw z mini-przewodnikiem prawidłowego stosowania znaku.',
-    tags: ['Affinity Designer', 'Wektor (SVG/EPS)', 'Projekt logo', 'Księga znaku', 'Typografia'],
+    title: 'Projekt logo & tożsamość marki',
+    category: 'Branding • Identyfikacja',
+    desc: 'Projekt wektorowego logo z kompletną paczką plików (SVG, EPS, PNG), doborem typografii oraz paletą barw z mini-przewodnikiem stosowania znaku.',
+    tags: ['Affinity', 'Wektor (SVG/EPS)', 'Logo Design', 'Typografia'],
     img: 'assets/images/branding_showcase.jpg'
-  },
-  'brand-hero': {
-    title: 'Oprawa graficzna i Key Visual marki',
-    category: 'Grafika • Key Visual',
-    desc: 'Nowoczesna koncepcja wizualna łącząca ciemną estetykę studyjną, szmaragdowe podświetlenie oraz dynamiczną, czytelną kompozycję zoptymalizowaną pod formaty 16:9 oraz 9:16.',
-    tags: ['Affinity Photo', 'Kompozycja graficzna', 'Key Visual', 'Retusz'],
-    img: 'assets/images/hero_portrait.jpg'
   }
 };
 
 function initProjectLightbox() {
   const modal = document.getElementById('projectModal');
-  const closeBtn = document.querySelector('.modal-close');
+  const closeBtn = document.querySelector('.modal-close-btn');
   const modalImg = document.getElementById('modalImg');
   const modalCat = document.getElementById('modalCat');
   const modalTitle = document.getElementById('modalTitle');
@@ -191,7 +187,7 @@ function initProjectLightbox() {
 
   if (!modal) return;
 
-  document.querySelectorAll('.project-card').forEach((card) => {
+  document.querySelectorAll('.work-card').forEach((card) => {
     card.addEventListener('click', () => {
       const id = card.getAttribute('data-id');
       const data = projectsData[id];
@@ -205,7 +201,7 @@ function initProjectLightbox() {
         modalTags.innerHTML = '';
         data.tags.forEach((tag) => {
           const span = document.createElement('span');
-          span.className = 'tag-item';
+          span.className = 'tag-badge';
           span.textContent = tag;
           modalTags.appendChild(span);
         });
@@ -236,9 +232,9 @@ function initProjectLightbox() {
   });
 }
 
-/* ==========================================================================
-   4. ONE-CLICK EMAIL COPY (KOPIOWANIE ADRESU E-MAIL)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   5. ONE-CLICK EMAIL COPY Z INFORMACJĄ ZWROTNĄ
+   -------------------------------------------------------------------------- */
 function initEmailCopy() {
   const copyButtons = document.querySelectorAll('.copy-email-btn');
   const defaultEmail = 'jakubjatkowski@gmail.com';
@@ -249,7 +245,7 @@ function initEmailCopy() {
       const email = btn.getAttribute('data-email') || defaultEmail;
 
       navigator.clipboard.writeText(email).then(() => {
-        showToast(`Skopiowano adres e-mail: ${email}`);
+        showToast(`Skopiowano adres: ${email}`);
 
         const icon = btn.querySelector('i');
         if (icon) {
@@ -266,9 +262,9 @@ function initEmailCopy() {
   });
 }
 
-/* ==========================================================================
-   5. OBSŁUGA FORMULARZA KONTAKTOWEGO
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   6. OBSŁUGA FORMULARZA KONTAKTOWEGO
+   -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('formSubmitBtn');
@@ -286,8 +282,9 @@ function initContactForm() {
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
 
+    // Walidacja
     if (!name) {
-      showToast('Wpisz swoje imię lub nazwę firmy');
+      showToast('Wpisz swoje imię');
       nameInput.focus();
       return;
     }
@@ -300,34 +297,35 @@ function initContactForm() {
     }
 
     if (!message) {
-      showToast('Napisz krótką treść wiadomości');
+      showToast('Napisz krótką wiadomość');
       messageInput.focus();
       return;
     }
 
+    // Stan wysyłania
     const originalBtnHtml = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Wysyłanie wiadomości...</span>';
+    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Wysyłanie...</span>';
     submitBtn.disabled = true;
 
     setTimeout(() => {
       submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Wysłano pomyślnie!</span>';
-      submitBtn.style.background = '#10b981';
-      showToast('Dziękuję za wiadomość! Odpowiem tak szybko, jak to możliwe.');
+      submitBtn.style.backgroundColor = '#10b981';
+      showToast('Dziękuję za wiadomość! Odpowiem najszybciej jak to możliwe.');
 
       form.reset();
 
       setTimeout(() => {
         submitBtn.innerHTML = originalBtnHtml;
-        submitBtn.style.background = '';
+        submitBtn.style.backgroundColor = '';
         submitBtn.disabled = false;
       }, 4000);
     }, 800);
   });
 }
 
-/* ==========================================================================
-   6. POWIADOMIENIE TOAST
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   7. POWIADOMIENIE TOAST
+   -------------------------------------------------------------------------- */
 let toastTimer;
 function showToast(message) {
   const toast = document.getElementById('toast');
