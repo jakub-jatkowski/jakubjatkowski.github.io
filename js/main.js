@@ -111,8 +111,8 @@ function initHeroTypewriter() {
    2. FILTRY KATEGORII W PORTFOLIO
    -------------------------------------------------------------------------- */
 function initPortfolioFilters() {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const cards = document.querySelectorAll('.work-card');
+  const tabs = document.querySelectorAll('.filter-pill-btn, .tab-btn');
+  const cards = document.querySelectorAll('.project-bento-card, .work-card');
 
   if (!tabs.length || !cards.length) return;
 
@@ -187,7 +187,7 @@ function initProjectLightbox() {
 
   if (!modal) return;
 
-  document.querySelectorAll('.work-card').forEach((card) => {
+  document.querySelectorAll('.project-bento-card, .work-card').forEach((card) => {
     card.addEventListener('click', () => {
       const id = card.getAttribute('data-id');
       const data = projectsData[id];
