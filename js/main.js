@@ -262,91 +262,141 @@ function initEmailCopy() {
   });
 }
 
+// Zapisanie znacznika czasu załadowania strony do detekcji botów
+const PAGE_LOADED_AT = Date.now();
+
 /* --------------------------------------------------------------------------
-   6. OBSŁUGA FORMULARZA KONTAKTOWEGO (RZECZYWISTA WYSYŁKA NA jakubjatkowski@gmail.com)
+   6. BEZPOŚREDNI FORMULARZ KONTAKTOWY Z ZABEZPIECZENIAMI ANTY-SPAM & ANTY-BOT
    -------------------------------------------------------------------------- */
+function sanitizeInput(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '') // Usuwanie znaków kontrolnych
+    .replace(/[<>]/g, '') // Usunięcie tagów HTML / ochrona przed XSS
+    .trim();
+}
+
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('formSubmitBtn');
 
   if (!form || !submitBtn) return;
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // 1. ZABEZPIECZENIE HONEYPOT (Pułapka na automatyczne boty)
+    const honeypot = document.getElementById('formHoneypot');
+    if (honeypot && honeypot.value.trim() !== '') {
+      // Ciche odrzucenie bota - fałszywy sukces, zero działania
+      showToast('Wiadomość została przetworzona.');
+      form.reset();
+      return;
+    }
+
+    // 2. ZABEZPIECZENIE CZASOWE (Time-trap: boty wysyłają natychmiast)
+    const elapsedSinceLoad = Date.now() - PAGE_LOADED_AT;
+    if (elapsedSinceLoad < 2000) {
+      showToast('Wypełnij formularz uważnie przed wysłaniem.');
+      return;
+    }
+
+    // 3. RATE LIMITING / OCHRONA ANTY-FLOOD (30s cooldown między wysyłkami)
+    const lastSubmitTime = parseInt(localStorage.getItem('jj_form_cooldown') || '0', 10);
+    const now = Date.now();
+    const COOLDOWN_TIME = 30000; // 30 sekund
+    if (now - lastSubmitTime < COOLDOWN_TIME) {
+      const remainingSeconds = Math.ceil((COOLDOWN_TIME - (now - lastSubmitTime)) / 1000);
+      showToast(`Odczekaj ${remainingSeconds}s przed kolejnym kontaktem (anty-flood).`);
+      return;
+    }
+
+    // Pobranie i sanityzacja pól formularza
     const nameInput = document.getElementById('formName');
     const emailInput = document.getElementById('formEmail');
     const serviceInput = document.getElementById('formService');
     const messageInput = document.getElementById('formMessage');
 
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const service = serviceInput ? serviceInput.value : 'Ogólne zapytanie';
-    const message = messageInput ? messageInput.value.trim() : '';
+    const rawName = nameInput ? nameInput.value : '';
+    const rawEmail = emailInput ? emailInput.value : '';
+    const rawService = serviceInput ? serviceInput.value : 'Współpraca';
+    const rawMessage = messageInput ? messageInput.value : '';
 
-    // Walidacja
-    if (!name) {
-      showToast('Wpisz swoje imię');
+    const name = sanitizeInput(rawName).slice(0, 80);
+    const email = sanitizeInput(rawEmail).slice(0, 100);
+    const service = sanitizeInput(rawService).slice(0, 80);
+    const message = sanitizeInput(rawMessage).slice(0, 2000);
+
+    // 4. WALIDACJA PÓL
+    if (name.length < 2) {
+      showToast('Wpisz swoje imię lub nazwę firmy (min. 2 znaki)');
       if (nameInput) nameInput.focus();
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-      showToast('Wpisz poprawny adres e-mail');
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      showToast('Wpisz poprawny adres e-mail (np. kontakt@domena.pl)');
       if (emailInput) emailInput.focus();
       return;
     }
 
-    if (!message) {
-      showToast('Napisz treść wiadomości');
+    if (message.length < 5) {
+      showToast('Napisz krótką treść wiadomości (min. 5 znaków)');
       if (messageInput) messageInput.focus();
       return;
     }
 
-    // Stan wysyłania
+    // 5. BUDOWANIE BEZPOŚREDNIEJ WIADOMOŚCI E-MAIL
+    const targetEmail = 'jakubjatkowski@gmail.com';
+    const emailSubject = `Współpraca: ${service} — ${name}`;
+    const emailBody = 
+`Cześć Jakub,
+
+Piszę w sprawie projektu z formularza na Twojej stronie portfolio.
+
+Dane kontaktowe:
+• Imię / Firma: ${name}
+• Adres e-mail zwrotny: ${email}
+• Wybrany zakres: ${service}
+
+Treść wiadomości:
+${message}
+
+---
+Wysłano bezpośrednio z formularza portfolio (jakubjatkowski.github.io)`;
+
+    // Przygotowanie linku mailto
+    const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Zapisanie cooldownu
+    localStorage.setItem('jj_form_cooldown', now.toString());
+
+    // Wizualna informacja zwrotna na przycisku
     const originalBtnHtml = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Wysyłanie wiadomości...</span>';
+    submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Otwieranie poczty...</span>';
+    submitBtn.style.backgroundColor = '#10b981';
     submitBtn.disabled = true;
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/jakubjatkowski@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          'Imię': name,
-          'Email': email,
-          'Usługa': service,
-          'Wiadomość': message,
-          '_subject': `Nowe zapytanie od ${name} — Portfolio`
-        })
-      });
+    // Automatyczna kopia do schowka jako niezawodny backup
+    navigator.clipboard.writeText(emailBody).then(() => {
+      showToast('Otwieram pocztę. Treść została również bezpiecznie skopiowana do schowka!');
+    }).catch(() => {
+      showToast('Otwieram program pocztowy...');
+    });
 
-      const data = await response.json();
+    // Bezpośrednie wywołanie klienta poczty
+    setTimeout(() => {
+      window.location.href = mailtoUrl;
+    }, 250);
 
-      if (response.ok || data.success === 'true' || data.success === true) {
-        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Wysłano pomyślnie!</span>';
-        submitBtn.style.backgroundColor = '#10b981';
-        showToast('Dziękuję za wiadomość! Odpowiem tak szybko, jak to możliwe.');
-        form.reset();
-      } else {
-        throw new Error('Błąd wysyłki');
-      }
-    } catch (err) {
-      // Fallback: standardowy submit
-      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Przekierowanie...</span>';
-      showToast('Wysyłanie przez serwer pocztowy...');
-      form.submit();
-    } finally {
-      setTimeout(() => {
-        submitBtn.innerHTML = originalBtnHtml;
-        submitBtn.style.backgroundColor = '';
-        submitBtn.disabled = false;
-      }, 5000);
-    }
+    // Reset formularza i przywrócenie stanu przycisku
+    setTimeout(() => {
+      form.reset();
+      submitBtn.innerHTML = originalBtnHtml;
+      submitBtn.style.backgroundColor = '';
+      submitBtn.disabled = false;
+    }, 4000);
   });
 }
 
@@ -364,5 +414,5 @@ function showToast(message) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
     toast.classList.remove('show');
-  }, 3500);
+  }, 4000);
 }

@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.1">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
 </head>
 <body>
 
@@ -311,20 +311,23 @@
 
               <!-- Prawa kolumna: Formularz kontaktowy -->
               <div class="contact-form-col">
-                <form id="contactForm" class="minimal-form" action="https://formsubmit.co/jakubjatkowski@gmail.com" method="POST" novalidate>
-                  <input type="hidden" name="_captcha" value="false">
-                  <input type="hidden" name="_subject" value="Nowe zapytanie o projekt — Jakub Jatkowski">
-                  <input type="hidden" name="_template" value="table">
+                <form id="contactForm" class="minimal-form" novalidate>
+                  
+                  <!-- Zabezpieczenie antyspamowe (Honeypot Trap) - niewidoczne dla użytkowników -->
+                  <div class="security-trap" aria-hidden="true" style="display:none!important;visibility:hidden;position:absolute;left:-9999px;opacity:0;">
+                    <label for="formHoneypot">Nie wypełniaj tego pola</label>
+                    <input type="text" id="formHoneypot" name="user_verification_trap" tabindex="-1" autocomplete="off">
+                  </div>
                   
                   <div class="form-row-2">
                     <div class="form-field">
-                      <label for="formName" class="field-label">Twoje imię *</label>
-                      <input type="text" id="formName" name="name" class="field-input" placeholder="np. Michał" required>
+                      <label for="formName" class="field-label">Twoje imię lub firma *</label>
+                      <input type="text" id="formName" name="name" class="field-input" placeholder="np. Michał" maxlength="80" required>
                     </div>
 
                     <div class="form-field">
                       <label for="formEmail" class="field-label">Adres e-mail *</label>
-                      <input type="email" id="formEmail" name="email" class="field-input" placeholder="np. kontakt@domena.pl" required>
+                      <input type="email" id="formEmail" name="email" class="field-input" placeholder="np. kontakt@domena.pl" maxlength="100" required>
                     </div>
                   </div>
 
@@ -332,23 +335,24 @@
                     <label for="formService" class="field-label">Czego dotyczy zlecenie?</label>
                     <div class="select-wrapper">
                       <select id="formService" name="service" class="field-input field-select">
-                        <option value="Wideo (Rolki / Shorts / TikTok)">🎬 Montaż Wideo (Rolki / Shorts / TikTok)</option>
+                        <option value="Montaż wideo (Rolki / Shorts / TikTok)">🎬 Montaż Wideo (Rolki / Shorts / TikTok)</option>
                         <option value="Wideo Reklamowe / Ads">🚀 Wideo Reklamowe / Ads</option>
-                        <option value="Grafika & Social Media">📱 Grafika & Social Media (Posty / Karuzele)</option>
-                        <option value="Materiały do druku (Plakaty / Ulotki)">🎨 Materiały do druku (Plakaty / Ulotki)</option>
-                        <option value="Inne / Pakiet">✨ Inne / Połączenie usług</option>
+                        <option value="Grafika do social mediów">📱 Grafika Social Media (Posty / Karuzele)</option>
+                        <option value="Materiały do druku (Plakaty / DTP)">🎨 Materiały do druku (Plakaty / DTP)</option>
+                        <option value="Identyfikacja wizualna i logo">💎 Identyfikacja wizualna & Logo</option>
+                        <option value="Stała współpraca miesięczna">✨ Stała współpraca miesięczna</option>
                       </select>
                     </div>
                   </div>
 
                   <div class="form-field">
                     <label for="formMessage" class="field-label">Wiadomość / Krótki opis *</label>
-                    <textarea id="formMessage" name="message" class="field-input field-textarea" rows="4" placeholder="Napisz krótko o swoim pomyśle lub potrzebach..." required></textarea>
+                    <textarea id="formMessage" name="message" class="field-input field-textarea" rows="4" placeholder="Napisz krótko o swoim pomyśle lub potrzebach..." maxlength="2000" required></textarea>
                   </div>
 
                   <button type="submit" id="formSubmitBtn" class="btn btn-primary btn-submit">
                     <i class="fa-solid fa-paper-plane"></i>
-                    <span>Wyślij wiadomość</span>
+                    <span>Wyślij bezpośrednio</span>
                   </button>
 
                 </form>
@@ -404,6 +408,6 @@
   <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
   <!-- Script -->
-  <script src="js/main.js?v=2.1"></script>
+  <script src="js/main.js?v=2.2"></script>
 </body>
 </html>
