@@ -375,7 +375,7 @@ Wysłano bezpośrednio z formularza portfolio (jakubjatkowski.github.io)`;
     // Wizualna informacja zwrotna na przycisku
     const originalBtnHtml = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Otwieranie poczty...</span>';
-    submitBtn.style.backgroundColor = '#3b82f6';
+    submitBtn.style.backgroundColor = '#2563eb';
     submitBtn.disabled = true;
 
     // Automatyczna kopia do schowka jako niezawodny backup
